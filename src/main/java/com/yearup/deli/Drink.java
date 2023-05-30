@@ -3,12 +3,10 @@ package com.yearup.deli;
 public class Drink {
     private double price;
     private String size;
-    private String flavor;
 
-    public Drink(double price, String size, String flavor) {
+    public Drink(double price, String size) {
         this.price = price;
         this.size = size;
-        this.flavor = flavor;
     }
 
     public double getPrice() {
@@ -27,11 +25,8 @@ public class Drink {
         this.size = size;
     }
 
-    public String getFlavor() { return flavor; }
-
-    public void setFlavor(String flavor) { this.flavor = flavor;}
-// Add to Order
-   /* public void calculatePrice() {
+    // Add to Order
+    public double addDrink() {
         switch (size.toLowerCase()) {
             case "small":
                 price = 2.00;
@@ -46,6 +41,7 @@ public class Drink {
                 System.out.println("Invalid size. Setting default price.");
                 break;
         }
-    }*/
-
+        return price;
+    }
 }
+
