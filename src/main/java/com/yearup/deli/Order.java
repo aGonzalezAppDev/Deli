@@ -24,13 +24,12 @@ public class Order {
         return sandwiches;
     }
 
-    public ArrayList<String> getDrinks() {
+    public ArrayList<Drink> getDrinks() {
         return drinks;
     }
 
     public void addChips() {
-        // default
-
+        chips = true;
     }
 
     public double getTotalPrice() {
@@ -45,21 +44,7 @@ public class Order {
         if (chips) {
             totalPrice += 1.50;
         }
-        return totalPrice
-    }
-    public void addDrink(String size) {
-        double price = 0;
-        switch (size) {
-            case "small":
-                price = 2.00;
-                break;
-            case "medium":
-                price = 2.50;
-                break;
-            case "large":
-                price = 3.00;
-                break;
-        }
+        return totalPrice;
     }
     public void displayOrder() {
         // default
