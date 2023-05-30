@@ -24,7 +24,7 @@ public class Order {
         return sandwiches;
     }
 
-    public ArrayList<String> getDrinks() {
+    public ArrayList<Drink> getDrinks() {
         return drinks;
     }
 
@@ -45,7 +45,7 @@ public class Order {
         if (chips) {
             totalPrice += 1.50;
         }
-        return totalPrice
+        return totalPrice;
     }
     public void addDrink(String size) {
         double price = 0;

@@ -25,7 +25,7 @@ public class Drink {
         this.size = size;
     }
 // Add to Order
-   /* public void calculatePrice() {
+    public double calculatePrice() {
         switch (size.toLowerCase()) {
             case "small":
                 price = 2.00;
@@ -40,6 +40,7 @@ public class Drink {
                 System.out.println("Invalid size. Setting default price.");
                 break;
         }
-    }*/
+        return price;
+    }
 
 }
