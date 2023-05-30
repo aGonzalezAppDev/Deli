@@ -13,6 +13,24 @@ public class Order {
         this.sandwiches = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chips = chips;
+
+    }
+
+    public int getNumOfOrder() {
+        return numOfOrder;
+    }
+
+    public ArrayList<Sandwich> getSandwiches() {
+        return sandwiches;
+    }
+
+    public ArrayList<String> getDrinks() {
+        return drinks;
+    }
+
+    public void addChips() {
+        // default
+
     }
 
     public double getTotalPrice() {
@@ -27,7 +45,7 @@ public class Order {
         if (chips) {
             totalPrice += 1.50;
         }
-        return totalPrice;
+        return totalPrice
     }
     public void addDrink(String size) {
         double price = 0;
