@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Order {
     private int numOfOrder;
     private ArrayList<Sandwich> sandwiches;
-    private ArrayList<String> drinks;
+    private ArrayList<Drink> drinks;
+    private boolean chips;
 
     public Order(int numOfOrder) {
         this.numOfOrder = numOfOrder;
@@ -28,10 +29,29 @@ public class Order {
     public void addChips() {
         // default
     }
+
+    public double getTotalPrice() {
+        double totalPrice = 0;
+
+        for (Sandwich sandwich : sandwiches) {
+            totalPrice += sandwich.getPrice();
+        }
+        for (Drink drink : drinks) {
+            totalPrice += drink.getPrice();
+        }
+        if (chips) {
+            totalPrice += 1.50;
+        }
+        return totalPrice
+    }
+
     public void displayOrder() {
         // default
     }
     public void isOrderCorrect() {
         // default
+    }
+    public void totalPrice() {
+
     }
 }
