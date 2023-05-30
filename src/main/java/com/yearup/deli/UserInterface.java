@@ -12,6 +12,7 @@ import java.util.Scanner;
          }
         public void displayHomeScreen() {
             System.out.println("Welcome to the Deli");
+            System.out.println("-----------------------------------------");
             System.out.println("1. View Orders");
             System.out.println("2. Add Order");
             System.out.println("3. Exit");
@@ -72,40 +73,49 @@ import java.util.Scanner;
         scanner.nextLine();
         System.out.println("Bread options: White, Wheat, Rye, Wrap.");
         System.out.print("Please enter the name of bread:");
+        System.out.println("-----------------------------------------");
         String bread = scanner.nextLine();
 
         System.out.println("Sandwich sizes(Goes by inch): 4, 8, 12.");
         System.out.print("Please enter sandwich size:");
+        System.out.println("-----------------------------------------");
         int sandwichSize = scanner.nextInt();
 
         System.out.println("Meat Options: Steak, Ham, Salami, Roast Beef, Chicken, Bacon.");
         System.out.print("Please enter a type of meat:");
+        System.out.println("-----------------------------------------");
         String meats = scanner.nextLine();
 
         System.out.print("Would you like extra meat? (yes/no)");
+        System.out.println("-----------------------------------------");
         boolean extraMeats = scanner.nextBoolean();
 
         System.out.println("Cheese Options: American, Provolone, Cheddar, Swiss");
         System.out.print("Please enter a type of cheese:");
+        System.out.println("-----------------------------------------");
         String cheese = scanner.nextLine();
 
         System.out.print("Would you like extra cheese? (extra)");
+        System.out.println("-----------------------------------------");
         String extraCheese = scanner.nextLine();
 
         System.out.println("Regular Topping Options: Lettuce, Peppers, Onions, Tomatoes, Jalepenos, Cucumbers, Pickles, Guacamole, Mushrooms");
         System.out.print("Please enter toppings: ");
+        System.out.println("-----------------------------------------");
         String regularToppings = scanner.nextLine();
 
         System.out.println("Sauce Options: Mayo, Mustard, Ketchup, Ranch, Thousand Islands, Vinaigrette");
         System.out.print("Please enter a sauce:");
+        System.out.println("-----------------------------------------");
         String sauce = scanner.nextLine();
 
         System.out.print("Would you like the sandwich to be toasted? (yes/no)");
+        System.out.println("-----------------------------------------");
         boolean toasted = scanner.nextBoolean();
 
-        Order sandwichOrder = new Order(bread, sandwichSize, meats, extraMeats,
+       /* Sandwich sandwichOrder = new Sandwich(bread, sandwichSize, meats, extraMeats,
                 cheese, extraCheese, regularToppings, sauce, toasted);
-        orders.add(sandwichOrder);
+        orders.add(sandwichOrder); */
 
         System.out.println("Order successfully added!");
         displayHomeScreen();
@@ -114,8 +124,11 @@ import java.util.Scanner;
     public void displayAddDrink() {
         scanner.nextLine();
         System.out.print("Please select drink size:");
+        System.out.println("-----------------------------------------");
+
         int drinkSize = scanner.nextInt();
         System.out.print("Please select drink flavor:");
+        System.out.println("-----------------------------------------");
         String drinkFlavor = scanner.next();
 
         Order drinkOrder = new Order(drinkSize, drinkFlavor);
@@ -127,6 +140,7 @@ import java.util.Scanner;
     public void displayAddChips(){
         scanner.nextLine();
         System.out.print("Would you like chips");
+        System.out.println("-----------------------------------------");
         boolean chips = scanner.nextBoolean();
 
         Order chipsOrder = new Order(chips);
