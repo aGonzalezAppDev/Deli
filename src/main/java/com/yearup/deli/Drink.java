@@ -24,8 +24,8 @@ public class Drink {
     public void setSize(String size) {
         this.size = size;
     }
-// Add to Order
-    public double calculatePrice() {
+
+    public double addDrink() {
         switch (size.toLowerCase()) {
             case "small":
                 price = 2.00;
@@ -43,4 +43,8 @@ public class Drink {
         return price;
     }
 
+
+
+
 }
+
