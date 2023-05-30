@@ -8,11 +8,26 @@ public class Order {
     private ArrayList<Drink> drinks;
     private boolean chips;
 
-    public Order(int numOfOrder, ArrayList<Sandwich> sandwiches, ArrayList<Drink> drinks, boolean chips) {
+    public Order(int numOfOrder) {
         this.numOfOrder = numOfOrder;
-        this.sandwiches = sandwiches;
-        this.drinks = drinks;
-        this.chips = chips;
+        this.sandwiches = new ArrayList<>();
+        this.drinks = new ArrayList<>();
+    }
+
+    public int getNumOfOrder() {
+        return numOfOrder;
+    }
+
+    public ArrayList<Sandwich> getSandwiches() {
+        return sandwiches;
+    }
+
+    public ArrayList<String> getDrinks() {
+        return drinks;
+    }
+
+    public void addChips() {
+        // default
     }
 
     public double getTotalPrice() {
@@ -27,7 +42,7 @@ public class Order {
         if (chips) {
             totalPrice += 1.50;
         }
-        return totalPrice;
+        return totalPrice
     }
 
     public void displayOrder() {
