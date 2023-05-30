@@ -25,7 +25,6 @@ public class Drink {
         this.size = size;
     }
 
-    // Add to Order
     public double addDrink() {
         switch (size.toLowerCase()) {
             case "small":
@@ -43,5 +42,9 @@ public class Drink {
         }
         return price;
     }
+
+
+
+
 }
 

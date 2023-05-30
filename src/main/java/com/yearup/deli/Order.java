@@ -45,7 +45,9 @@ public class Order {
             totalPrice += 1.50;
         }
         return totalPrice;
+
     }
+    
     public void displayOrder() {
         // default
     }
