@@ -8,7 +8,7 @@ public class Sandwich {
     private String toppings;
     private boolean toasted;
 
-    public Sandwich(double price, String size, String toppings, boolean toasted) {
+    public Sandwich(String size, String toppings, boolean toasted) {
         this.price = price;
         this.size = size;
         this.toppings = toppings;
@@ -37,24 +37,26 @@ public class Sandwich {
     public boolean isToasted() {
         return toasted;
     }
+    public boolean getToasted() {
+        return toasted;
+    }
     public void setToasted(boolean toasted) {
         this.toasted = toasted;
     }
 
-    // method for choosing Toppings
-    public String chooseToppings(){
-        System.out.println("Which toppings would you like? : ");
-        Scanner myScanner = new Scanner(System.in);
-        String userInput = myScanner.nextLine();
-        return userInput;
-
-    }
 
     // method for toasting bread
     public void toast(){
-
+        toasted = true;
     }
 
+    // method for price
+    public double get4SandwichPrice(){
+        if(size.equalsIgnoreCase("4\"")){
+            price = 5.50;
+        }
+        return price;
+    }
 
 
 }

@@ -7,11 +7,24 @@ public class Order {
     private ArrayList<Sandwich> sandwiches;
     private ArrayList<String> drinks;
 
-    public Order(int numOfOrder, ArrayList<Sandwich> sandwiches, ArrayList<String> drinks) {
+    public Order(int numOfOrder) {
         this.numOfOrder = numOfOrder;
-        this.sandwiches = sandwiches;
-        this.drinks = drinks;
+        this.sandwiches = new ArrayList<>();
+        this.drinks = new ArrayList<>();
     }
+
+    public int getNumOfOrder() {
+        return numOfOrder;
+    }
+
+    public ArrayList<Sandwich> getSandwiches() {
+        return sandwiches;
+    }
+
+    public ArrayList<String> getDrinks() {
+        return drinks;
+    }
+
     public void addChips() {
         // default
     }
