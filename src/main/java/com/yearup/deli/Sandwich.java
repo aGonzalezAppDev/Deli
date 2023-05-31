@@ -1,9 +1,7 @@
 package com.yearup.deli;
 
-import java.util.Scanner;
 
 public class Sandwich {
-    private double price;
     private int size;
     private String toppings;
     private boolean toasted;
@@ -15,7 +13,6 @@ public class Sandwich {
     private boolean extraCheeseAdded;
 
     public Sandwich(int size, String toppings, boolean toasted) {
-        this.price = price;
         this.size = size;
         this.toppings = toppings;
         this.toasted = false;
@@ -24,12 +21,6 @@ public class Sandwich {
     }
 
     // getters and setters
-    public double getPrice() {
-        return price;
-    }
-    public void setPrice(double price) {
-        this.price = price;
-    }
     public int getSize() {
         return size;
     }
@@ -123,13 +114,20 @@ public class Sandwich {
     }
 
     public double getTotalPriceOfSandwich(){
-            totalPriceOfSandwich = priceOfBread + priceOfMeat + priceOfCheese;
-            if(extraMeatAdded == true){
-                 totalPriceOfSandwich = AddExtraMeat() + priceOfBread + priceOfCheese;
+        if(toasted) {
+            toast();
+
+            totalPriceOfSandwich = getBreadPrice() + getMeatPrice() + getCheesePrice();
+            if (extraMeatAdded) {
+                totalPriceOfSandwich = AddExtraMeat() + getBreadPrice() + getCheesePrice();
             }
-            if(extraCheeseAdded == true){
-                totalPriceOfSandwich = AddExtraCheese() + priceOfBread + priceOfMeat;
+            if (extraCheeseAdded) {
+                totalPriceOfSandwich = AddExtraCheese() + getBreadPrice() + getMeatPrice();
             }
-        return totalPriceOfSandwich;
+            if(extraCheeseAdded && extraMeatAdded){
+                totalPriceOfSandwich = AddExtraCheese() + AddExtraMeat() + getBreadPrice();
+            }
+        }
+            return totalPriceOfSandwich;
     }
 }
