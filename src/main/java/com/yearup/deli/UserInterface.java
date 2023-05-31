@@ -131,7 +131,7 @@ import java.util.Scanner;
         System.out.println("-----------------------------------------");
         String drinkFlavor = scanner.next();
 
-        Order drinkOrder = new Order(drinkSize, drinkFlavor);
+        Order drinkOrder = new Order(drinkSize);
         orders.add(drinkOrder);
 
         System.out.println("Drink successfully added!");
