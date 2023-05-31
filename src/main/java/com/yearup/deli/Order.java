@@ -41,7 +41,7 @@ public class Order {
             totalPrice += sandwich.getTotalPriceOfSandwich();
         }
         for (Drink drink : drinks) {
-            totalPrice += drink.getPrice();
+        //    totalPrice += drink.getPrice();
         }
         if (chips == true) {
             totalPrice += 1.50;
@@ -68,5 +68,28 @@ public class Order {
         } else {
             System.out.println("Incorrect order.");
         }
+
+    }
+    public void addSandwich(Sandwich sandwich) {
+        sandwiches.add(sandwich);
+
+    }
+    public void addDrink(Drink drink) {
+        drinks.add(drink);
+
+    }
+
+    public ArrayList<Sandwich> displaySandwiches(){
+        return sandwiches;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "numOfOrder=" + numOfOrder +
+                ", sandwiches=" + sandwiches +
+                ", drinks=" + drinks +
+                ", chips=" + chips +
+                '}';
     }
 }
