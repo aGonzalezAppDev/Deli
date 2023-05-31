@@ -15,6 +15,9 @@ public class Order {
         this.drinks = new ArrayList<>();
     }
 
+    public Order(boolean chips) {
+    }
+
     public int getNumOfOrder() {
         return numOfOrder;
     }
@@ -35,7 +38,7 @@ public class Order {
         double totalPrice = 0;
 
         for (Sandwich sandwich : sandwiches) {
-            totalPrice += sandwich.getPrice();
+            totalPrice += sandwich.getTotalPriceOfSandwich();
         }
         for (Drink drink : drinks) {
             totalPrice += drink.getPrice();
