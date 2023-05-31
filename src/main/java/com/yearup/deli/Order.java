@@ -1,6 +1,7 @@
 package com.yearup.deli;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Order {
     private int numOfOrder;
@@ -12,8 +13,6 @@ public class Order {
         this.numOfOrder = numOfOrder;
         this.sandwiches = new ArrayList<>();
         this.drinks = new ArrayList<>();
-        this.chips = chips;
-
     }
 
     public int getNumOfOrder() {
@@ -29,7 +28,7 @@ public class Order {
     }
 
     public void addChips() {
-        chips = true;
+        chips = false;
     }
 
     public double getTotalPrice() {
@@ -41,17 +40,28 @@ public class Order {
         for (Drink drink : drinks) {
             totalPrice += drink.getPrice();
         }
-        if (chips) {
+        if (chips == true) {
             totalPrice += 1.50;
         }
         return totalPrice;
     }
     public void displayOrder() {
-        // default
+        System.out.println("Order Details:");
+        for (Sandwich sandwich : sandwiches) {
+            System.out.println("Sandwich size: " + sandwich.getSize());
+            System.out.println("Toppings: " + sandwich.getToppings());
+            System.out.println("Toasted: " + sandwich.getToasted());
+        }
+        System.out.println("Total cost: $" + getTotalPrice());
     }
-    public void isOrderCorrect() {
-        // default
-    }
-    public void totalPrice() {
+    public void isOrderCorrect(Scanner scanner) {
+        System.out.print("Is your order correct? ");
+        boolean correct = scanner.nextBoolean();
+
+        if (correct) {
+            System.out.println("Thank you for confirm your order");
+        } else {
+            System.out.println("Incorrect order.");
+        }
     }
 }
