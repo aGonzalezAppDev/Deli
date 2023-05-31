@@ -34,7 +34,7 @@ public class Order {
         chips = false;
     }
 
-    public double getTotalPrice() {
+    /*public double getTotalPrice() {
         double totalPrice = 0;
 
         for (Sandwich sandwich : sandwiches) {
@@ -48,9 +48,9 @@ public class Order {
         }
         return totalPrice;
 
-    }
+    }*/
     
-    public void displayOrder() {
+    /*public void displayOrder() {
         System.out.println("Order Details:");
         for (Sandwich sandwich : sandwiches) {
             System.out.println("Sandwich size: " + sandwich.getSize());
@@ -58,7 +58,7 @@ public class Order {
             System.out.println("Toasted: " + sandwich.getToasted());
         }
         System.out.println("Total cost: $" + getTotalPrice());
-    }
+    }*/
     public void isOrderCorrect(Scanner scanner) {
         System.out.print("Is your order correct? ");
         boolean correct = scanner.nextBoolean();

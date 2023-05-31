@@ -59,10 +59,10 @@ import java.util.Scanner;
                 displayAddChips();
                 break;
             case 4:
-                checkOut();
+                //checkOut();
                 break;
             case 0:
-                cancelOrder();
+                //cancelOrder();
                 break;
 
             default:
@@ -100,6 +100,7 @@ import java.util.Scanner;
         System.out.print("Please enter a type of cheese:");
 
         String cheese = scanner.nextLine();
+        scanner.nextLine();
 
         System.out.print("Would you like extra cheese? (yes/no)");
         System.out.println("-----------------------------------------");
@@ -121,12 +122,22 @@ import java.util.Scanner;
         System.out.println("-----------------------------------------");
         boolean toasted = scanner.nextLine().equalsIgnoreCase("yes");
 
-        Sandwich sandwich = new Sandwich(sandwichSize, bread, toasted);
+        Sandwich sandwich = new Sandwich(bread,sandwichSize, sauce, toasted);
         orders.addSandwich(sandwich);
 
         System.out.println("Order successfully added!");
         displayHomeScreen();
 
+        StringBuilder str = new StringBuilder();
+        str.append("Bread: ").append(bread).append("\n");
+        str.append("Size: ").append(sandwichSize).append("\n");
+        str.append("Meat Toppings: ").append(meats).append("\n");
+        str.append("Cheese Toppings: ").append(cheese).append("\n");
+        str.append("Other Toppings: ").append(regularToppings).append("\n");
+        str.append("Sauce: ").append(sauce).append("\n");
+        str.append("Toasted: ").append(toasted).append("\n");
+        // print string
+        System.out.println(str.toString());
     }
     public void displayAddDrink() {
         scanner.nextLine();
@@ -156,7 +167,7 @@ import java.util.Scanner;
         System.out.println("Chips successfully added!");
         displayHomeScreen();
     }
-    public void checkOut() {
+    /*public void checkOut() {
              //Add a switch
         Order totalOrder = new Order(orders.getNumOfOrder());
         double total = totalOrder.getTotalPrice();
@@ -173,5 +184,8 @@ import java.util.Scanner;
             case 1:
                 saveOrder();
         }
-        }
+        }*/
+    public void printOrderDetails() {
+
+    }
     }
