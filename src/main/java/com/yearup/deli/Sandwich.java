@@ -12,7 +12,7 @@ public class Sandwich {
     private boolean extraMeatAdded;
     private boolean extraCheeseAdded;
 
-    public Sandwich(int size, String toppings, boolean toasted) {
+    public Sandwich(String bread, int size, String toppings, boolean toasted, String cheese, String extraCheese, String regularToppings, String sauce, boolean b) {
         this.size = size;
         this.toppings = toppings;
         this.toasted = false;

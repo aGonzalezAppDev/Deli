@@ -113,13 +113,14 @@ import java.util.Scanner;
         System.out.println("-----------------------------------------");
         boolean toasted = scanner.nextBoolean();
 
-       /* Sandwich sandwichOrder = new Sandwich(bread, sandwichSize, meats, extraMeats,
-                cheese, extraCheese, regularToppings, sauce, toasted);
-        orders.add(sandwichOrder); */
-
         System.out.println("Order successfully added!");
         displayHomeScreen();
 
+        Sandwich sandwichOrder = new Sandwich(bread, sandwichSize, meats, extraMeats,
+                cheese, extraCheese, regularToppings, sauce, toasted);
+
+        Order order = new Order(sandwichOrder);
+        orders.add(order);
     }
     public void displayAddDrink() {
         scanner.nextLine();

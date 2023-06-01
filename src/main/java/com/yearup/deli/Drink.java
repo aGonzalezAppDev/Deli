@@ -42,9 +42,5 @@ public class Drink {
         }
         return price;
     }
-
-
-
-
 }
 
