@@ -1,48 +1,30 @@
 package com.yearup.deli;
 
 import java.util.ArrayList;
+import java.util.List;
+
 public class Sandwich {
     private String bread;
     private int size;
-    private ArrayList<String> meatToppings;
-    private ArrayList<String> cheeseToppings;
-    private ArrayList<String> otherToppings;
-    private ArrayList<String> sauces;
+    private List<String> meatToppings;
+    private List<String> cheeseToppings;
+    private List<String> otherToppings;
+    private List<String> sauces;
     private String toasted;
 
 
-
-    public Sandwich(String bread, int size, String toasted) {
+    public Sandwich(String bread, int size, List<String> meatToppings, List<String> cheeseToppings, List<String> otherToppings, List<String> sauces, String toasted) {
         this.bread = bread;
         this.size = size;
-        this.meatToppings = new ArrayList<>();
-        this.cheeseToppings = new ArrayList<>();
-        this.otherToppings = new ArrayList<>();
-        this.sauces = new ArrayList<>();
+        this.meatToppings = meatToppings;
+        this.cheeseToppings = cheeseToppings;
+        this.otherToppings = otherToppings;
+        this.sauces = sauces;
         this.toasted = toasted;
-
     }
 
     // getters and setters
-    public int getSize() {
-        return size;
-    }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public String isToasted() {
-        return toasted;
-    }
-
-    public String getToasted() {
-        return toasted;
-    }
-
-    public void setToasted(String toasted) {
-        this.toasted = toasted;
-    }
 
     public String getBread() {
         return bread;
@@ -52,36 +34,52 @@ public class Sandwich {
         this.bread = bread;
     }
 
-    public ArrayList<String> getMeatToppings() {
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public List<String> getMeatToppings() {
         return meatToppings;
     }
 
-    public void setMeatToppings(ArrayList<String> meatToppings) {
+    public void setMeatToppings(List<String> meatToppings) {
         this.meatToppings = meatToppings;
     }
 
-    public ArrayList<String> getCheeseToppings() {
+    public List<String> getCheeseToppings() {
         return cheeseToppings;
     }
 
-    public void setCheeseToppings(ArrayList<String> cheeseToppings) {
+    public void setCheeseToppings(List<String> cheeseToppings) {
         this.cheeseToppings = cheeseToppings;
     }
 
-    public ArrayList<String> getOtherToppings() {
+    public List<String> getOtherToppings() {
         return otherToppings;
     }
 
-    public void setOtherToppings(ArrayList<String> otherToppings) {
+    public void setOtherToppings(List<String> otherToppings) {
         this.otherToppings = otherToppings;
     }
 
-    public ArrayList<String> getSauce() {
+    public List<String> getSauces() {
         return sauces;
     }
 
-    public void setSauce(ArrayList<String> sauces) {
+    public void setSauces(List<String> sauces) {
         this.sauces = sauces;
+    }
+
+    public String getToasted() {
+        return toasted;
+    }
+
+    public void setToasted(String toasted) {
+        this.toasted = toasted;
     }
 
     // StringBuilder
@@ -148,4 +146,16 @@ public class Sandwich {
         return totalPrice;
     }
 
+    @Override
+    public String toString() {
+        return "Sandwich{" +
+                "bread='" + bread + '\'' +
+                ", size=" + size +
+                ", meatToppings=" + meatToppings +
+                ", cheeseToppings=" + cheeseToppings +
+                ", otherToppings=" + otherToppings +
+                ", sauces=" + sauces +
+                ", toasted='" + toasted + '\'' +
+                '}';
+    }
 }
