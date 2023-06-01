@@ -19,12 +19,12 @@ public class Chips {
 
 
 
-    public StringBuilder printChipsOrder() {
+    public String printChipsOrder() {
         StringBuilder str = new StringBuilder();
         str.append("Chips: ").append(chips).append("\n");
 
 
-        return str;
+        return str.toString();
     }
 
     public double getPrice() {

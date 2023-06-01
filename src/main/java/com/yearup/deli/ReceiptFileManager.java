@@ -14,18 +14,35 @@ public class ReceiptFileManager {
 
     public void saveOrder(Order order) throws IOException {
         Date date = new Date();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-hh-mm-ss");
-        File file = new File (dateFormat.format(date) + ".txt");
-        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-        // write order details
-        //writer.write(order.getNumOfOrder());
-        writer.close();
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-hh-mm-ss");
+            String fileName = dateFormat.format(date) + ".txt";
+            String folderPath = "/LocalDisk(C:)/LearnToCode_Capstones/Deli";
+            File file = new File(folderPath, fileName);
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            // write order details
+            //writer.write(order.getNumOfOrder());
 
-        // write sandwich details
-        for(Sandwich sandwich : order.getSandwiches()) {
-            //writer.write(sandwich.getBread()+ sandwich.getSize() + "|" + "|" + sandwich.getToasted());
-            sandwich.printOrderDetails();
+
+            // write sandwich details
+            for (Sandwich sandwich : order.getSandwiches()) {
+                writer.write(sandwich.printOrderDetails());
+                writer.write(String.valueOf(sandwich.getPrice()));
+            }
+            // write drink details
+            for (Drink drink : order.getDrinks()) {
+                writer.write(drink.printDrinkOrder());
+                writer.write(String.valueOf(drink.getPrice()));
+            }
+            // write chips details
+            for (Chips chips : order.getChipsList()) {
+                writer.write(chips.printChipsOrder());
+                writer.write(String.valueOf(chips.getPrice()));
+            }
+            writer.close();
+        } catch(Exception e)
+        {
+            System.out.println("Exception in File IO");
         }
-
     }
 }

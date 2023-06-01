@@ -35,12 +35,12 @@ public class Drink {
     }
 
 
-    public StringBuilder printDrinkOrder() {
+    public String printDrinkOrder() {
         StringBuilder str = new StringBuilder();
         str.append("Size: ").append(size).append("\n");
         str.append("Flavor: ").append(flavor).append("\n");
         str.append("Price: $").append(price);
-        return str;
+        return str.toString();
     }
 
     // create a method for get price and drink size
