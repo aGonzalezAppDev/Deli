@@ -98,9 +98,13 @@ public class Main {
         System.out.print("Please enter a type of meat:");
         String meats = scanner.nextLine();
         meatToppings.add(meats);
-       boolean exit = false;
+
+        System.out.print("Would you like extra meat? (yes/no)");
+        System.out.println("-----------------------------------------");
+        boolean extraMeats = scanner.nextLine().equalsIgnoreCase("yes");
+        boolean exit = false;
         while (!exit) {
-            System.out.println("Enter a Meat Topping or Exit to Stop");
+            System.out.println("Enter a another meat topping or exit to stop");
             meats = scanner.nextLine();
             if (meats.equalsIgnoreCase("exit")) {
                 exit = true;
@@ -109,12 +113,6 @@ public class Main {
                 System.out.println(meatToppings);
             }
         }
-
-            System.out.print("Would you like extra meat? (yes/no)");
-            System.out.println("-----------------------------------------");
-            boolean extraMeats = scanner.nextLine().equalsIgnoreCase("yes");
-
-
             System.out.println("Cheese Options: American, Provolone, Cheddar, Swiss");
             System.out.println("-----------------------------------------");
             System.out.print("Please enter a type of cheese:");
@@ -127,12 +125,38 @@ public class Main {
             System.out.println("-----------------------------------------");
             boolean extraCheese = scanner.nextLine().equalsIgnoreCase("yes");
 
+
+        exit = false;
+        while (!exit) {
+            System.out.println("Enter a another cheese topping or exit to stop");
+            cheese = scanner.nextLine();
+            if (cheese.equalsIgnoreCase("exit")) {
+                exit = true;
+            } else {
+                cheeseToppings.add(cheese);
+                System.out.println(cheeseToppings);
+            }
+        }
+
             System.out.println("Regular Topping Options: Lettuce, Peppers, Onions, Tomatoes, Jalepenos, Cucumbers, Pickles, Guacamole, Mushrooms");
             System.out.println("-----------------------------------------");
             System.out.print("Please enter toppings: ");
 
             String regularToppings = scanner.nextLine();
             otherToppings.add(regularToppings);
+            scanner.nextLine();
+
+        exit = false;
+        while (!exit) {
+            System.out.println("Enter a another Regular topping or exit to stop");
+            regularToppings = scanner.nextLine();
+            if (regularToppings.equalsIgnoreCase("exit")) {
+                exit = true;
+            } else {
+                otherToppings.add(regularToppings);
+                System.out.println(otherToppings);
+            }
+        }
 
             System.out.println("Sauce Options: Mayo, Mustard, Ketchup, Ranch, Thousand Islands, Vinaigrette");
             System.out.println("-----------------------------------------");
@@ -140,6 +164,19 @@ public class Main {
 
             String sauce = scanner.nextLine();
             sauces.add(sauce);
+        scanner.nextLine();
+
+        exit = false;
+        while (!exit) {
+            System.out.println("Enter a another sauce or exit to stop");
+            sauce = scanner.nextLine();
+            if (sauce.equalsIgnoreCase("exit")) {
+                exit = true;
+            } else {
+                sauces.add(sauce);
+                System.out.println(sauces);
+            }
+        }
 
             System.out.print("Would you like the sandwich to be toasted? (yes/no)");
             System.out.println("-----------------------------------------");
@@ -153,10 +190,10 @@ public class Main {
             StringBuilder str = new StringBuilder();
             str.append("Bread: ").append(bread).append("\n");
             str.append("Size: ").append(sandwichSize).append("\n");
-            str.append("Meat Toppings: ").append(meats).append("\n");
-            str.append("Cheese Toppings: ").append(cheese).append("\n");
-            str.append("Other Toppings: ").append(regularToppings).append("\n");
-            str.append("Sauce: ").append(sauce).append("\n");
+            str.append("Meat Toppings: ").append(meatToppings).append("\n");
+            str.append("Cheese Toppings: ").append(cheeseToppings).append("\n");
+            str.append("Other Toppings: ").append(otherToppings).append("\n");
+            str.append("Sauce: ").append(sauces).append("\n");
             str.append("Toasted: ").append(toasted).append("\n");
             // print string
             System.out.println(str.toString());
