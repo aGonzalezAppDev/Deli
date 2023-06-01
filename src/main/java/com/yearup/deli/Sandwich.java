@@ -11,9 +11,11 @@ public class Sandwich {
     private List<String> otherToppings;
     private List<String> sauces;
     private String toasted;
+    private boolean extraMeat;
+    private boolean extraCheese;
 
 
-    public Sandwich(String bread, int size, List<String> meatToppings, List<String> cheeseToppings, List<String> otherToppings, List<String> sauces, String toasted) {
+    public Sandwich(String bread, int size, List<String> meatToppings, List<String> cheeseToppings, List<String> otherToppings, List<String> sauces, String toasted, boolean extraMeat, boolean extraCheese) {
         this.bread = bread;
         this.size = size;
         this.meatToppings = meatToppings;
@@ -21,10 +23,28 @@ public class Sandwich {
         this.otherToppings = otherToppings;
         this.sauces = sauces;
         this.toasted = toasted;
+        this.extraMeat = false;
+        this.extraCheese = false;
     }
 
     // getters and setters
 
+
+    public boolean isExtraMeat() {
+        return extraMeat;
+    }
+
+    public void setExtraMeat(boolean extraMeat) {
+        this.extraMeat = extraMeat;
+    }
+
+    public boolean isExtraCheese() {
+        return extraCheese;
+    }
+
+    public void setExtraCheese(boolean extraCheese) {
+        this.extraCheese = extraCheese;
+    }
 
     public String getBread() {
         return bread;
@@ -83,7 +103,7 @@ public class Sandwich {
     }
 
     // StringBuilder
-    public StringBuilder printOrderDetails() {
+    public String printOrderDetails() {
         StringBuilder str = new StringBuilder();
         str.append("Bread: " + bread).append("\n");
         str.append("Size: " + size).append("\n");
@@ -109,7 +129,7 @@ public class Sandwich {
         str.append("\n");
         str.append("Toasted: " + toasted);
 
-        return str;
+        return str.toString();
     }
 
     // method for price
@@ -142,6 +162,22 @@ public class Sandwich {
         }
 
         double totalPrice = breadPrice + meatPrice + cheesePrice;
+
+        if((size == 4) && (extraMeat = true)){
+            totalPrice += 0.50;
+        } else if ((size == 8) && (extraMeat = true)){
+            totalPrice += 1.00;
+        } else if ((size == 12) && (extraMeat = true)){
+            totalPrice += 1.50;
+        }
+
+        if((size == 4) && (extraCheese = true )) {
+            totalPrice += 0.30;
+        } else if ((size == 8) && (extraCheese = true)) {
+            totalPrice += 0.60;
+        } else if ((size == 12) && (extraCheese = true)) {
+            totalPrice += 0.90;
+        }
 
         return totalPrice;
     }
