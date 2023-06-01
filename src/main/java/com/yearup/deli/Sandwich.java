@@ -114,9 +114,6 @@ public class Sandwich {
         return str;
     }
 
-
-
-
     // method for price
     public double getPrice(){
         double breadPrice = 0.0;
