@@ -254,7 +254,7 @@ public class Main {
 
         switch (choice) {
             case 1:
-                System.out.println("saving file");
+                System.out.println("Saving File");
                 try {
                     rfm.saveOrder(order);
                 } catch (IOException e) {
@@ -262,7 +262,10 @@ public class Main {
                 }
                 break;
             case 0:
-                System.out.println("order canceled.");
+                System.out.println("Cancelling Order.");
+                order.getSandwiches().clear();
+                order.getDrinks().clear();
+                order.getChipsList().clear();
                 break;
             default:
                 System.out.println("Invalid option. Try again.");

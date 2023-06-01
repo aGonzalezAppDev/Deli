@@ -17,7 +17,7 @@ public class ReceiptFileManager {
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-hh-mm-ss");
             String fileName = dateFormat.format(date) + ".txt";
-            File folderPath = new File("C:\\LearnToCode_Capstones\\Deli\\receipts"); // "C:/LearnToCode_Capstones/Deli"
+            File folderPath = new File("C:/LearnToCode_Capstones/Deli/receipts"); // "C:/LearnToCode_Capstones/Deli"
             folderPath.mkdirs();
             File file = new File(folderPath, fileName);
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
