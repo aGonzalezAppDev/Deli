@@ -39,6 +39,24 @@ public class Order {
         }
         return totalPrice;
     }
+    public String printOrderDetails() {
+        StringBuilder str = new StringBuilder();
+        str.append("Sandwich").append("\n");
+        for (Sandwich sandwich : sandwiches) {
+            str.append(sandwich).append(", ");
+        }
+        str.append("\n");
+        str.append("Drink").append("\n");
+        for (Drink drink : drinks) {
+            str.append(drink).append(", ");
+        }
+        str.append("\n");
+        str.append("Chips").append("\n");
+        for (Chips chips : chipsList) {
+            str.append(chips).append(", ");
+        }
+        return str.toString();
+    }
 
     public void addSandwich(Sandwich sandwich) {
         sandwiches.add(sandwich);

@@ -56,5 +56,14 @@ public class Drink {
         }
         return drinkPrice;
     }
+
+    @Override
+    public String toString() {
+        return "Drink{" +
+                "size='" + size + '\'' +
+                ", flavor='" + flavor + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
 
