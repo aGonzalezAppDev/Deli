@@ -1,0 +1,7 @@
+Bread: white
+Size: 4
+Meat Toppings: ham, 
+Cheese Toppings: swiss, 
+ Other Toppings: peppers, 
+Sauces: mayo, 
+Toasted: no8.05
