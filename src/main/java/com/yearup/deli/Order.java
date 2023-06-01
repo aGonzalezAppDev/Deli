@@ -4,36 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private int numOfOrder;
-    private ArrayList<Sandwich> sandwiches;
-    private ArrayList<Drink> drinks;
+    //private int numOfOrder;
+    private List<Sandwich> sandwiches;
+    private List<Drink> drinks;
     private List<Chips> chipsList;
     private double price;
 
-    public Order(int numOfOrder) {
-        this.numOfOrder = numOfOrder;
+    public Order() {
+        //this.numOfOrder = numOfOrder;
         this.sandwiches = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chipsList = new ArrayList<>();
         this.price = 0.0;
     }
 
-    public int getNumOfOrder() {
-        return numOfOrder;
-    }
-
-    public ArrayList<Sandwich> getSandwiches() {
+    public List<Sandwich> getSandwiches() {
         return sandwiches;
     }
 
-    public ArrayList<Drink> getDrinks() {
+    public List<Drink> getDrinks() {
         return drinks;
     }
 
     /* public ArrayList<String> getChips() {
         return chips;
     } */
-
+// totalprice inside of the order class 3 for loops
     /* public double getTotalPrice() {
         double totalPrice = 0;
 
@@ -85,7 +81,7 @@ public class Order {
     /* public void addChips(Order chip) {
         chips.add(String.valueOf(chip));
     } */
-    public ArrayList<Sandwich> displaySandwiches(){
+    public List<Sandwich> displaySandwiches(){
         return sandwiches;
     }
 
@@ -105,7 +101,6 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "numOfOrder=" + numOfOrder +
                 ", sandwiches=" + sandwiches +
                 ", drinks=" + drinks +
                 ", chipsList=" + chipsList +
