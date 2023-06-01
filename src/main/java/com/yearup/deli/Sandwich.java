@@ -7,22 +7,19 @@ public class Sandwich {
     private ArrayList<String> meatToppings;
     private ArrayList<String> cheeseToppings;
     private ArrayList<String> otherToppings;
-    private ArrayList<String> sauce;
+    private ArrayList<String> sauces;
     private String toasted;
-    private boolean extraMeat;
-    private boolean extraCheese;
 
 
-    public Sandwich(String bread, int size, ArrayList<String> meatToppings, ArrayList<String> cheeseToppings, ArrayList<String> otherToppings, ArrayList<String> sauce, String toasted) {
+
+    public Sandwich(String bread, int size, String toasted) {
         this.bread = bread;
         this.size = size;
-        this.meatToppings = meatToppings;
-        this.cheeseToppings = cheeseToppings;
-        this.otherToppings = otherToppings;
-        this.sauce = sauce;
+        this.meatToppings = new ArrayList<>();
+        this.cheeseToppings = new ArrayList<>();
+        this.otherToppings = new ArrayList<>();
+        this.sauces = new ArrayList<>();
         this.toasted = toasted;
-        this.extraMeat = false;
-        this.extraCheese = false;
 
     }
 
@@ -80,23 +77,38 @@ public class Sandwich {
     }
 
     public ArrayList<String> getSauce() {
-        return sauce;
+        return sauces;
     }
 
-    public void setSauce(ArrayList<String> sauce) {
-        this.sauce = sauce;
+    public void setSauce(ArrayList<String> sauces) {
+        this.sauces = sauces;
     }
 
-    // Create a StringBuilder object
-    // using StringBuilder() constructor
+    // StringBuilder
     public StringBuilder printOrderDetails() {
         StringBuilder str = new StringBuilder();
         str.append("Bread: " + bread).append("\n");
         str.append("Size: " + size).append("\n");
-        str.append("Meat Toppings: " + meatToppings).append("\n");
-        str.append("Cheese Toppings: " + cheeseToppings).append("\n");
-        str.append(" Other Toppings: " + otherToppings).append("\n");
-        str.append("Sauces: " + sauce).append("\n");
+        str.append("Meat Toppings: ");
+        for(String meats: meatToppings){
+            str.append(meats).append(", ");
+        }
+        str.append("\n");
+        str.append("Cheese Toppings: ");
+        for(String cheeses: cheeseToppings){
+            str.append(cheeses).append(", ");
+        }
+        str.append("\n");
+        str.append(" Other Toppings: ");
+        for(String toppings: otherToppings){
+            str.append(toppings).append(", ");
+        }
+        str.append("\n");
+        str.append("Sauces: ");
+        for(String sauce: sauces){
+            str.append(sauce).append(", ");
+        }
+        str.append("\n");
         str.append("Toasted: " + toasted);
 
         return str;
@@ -123,8 +135,6 @@ public class Sandwich {
             meatPrice += meatToppings.size() * 2.00;
         } else if (size ==12) {
             meatPrice += meatToppings.size() * 3.00;
-        } else if (size == 4 && extraMeat == true){
-
         }
 
         double cheesePrice = 0.0;
