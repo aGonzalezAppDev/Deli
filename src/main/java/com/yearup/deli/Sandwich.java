@@ -10,17 +10,17 @@ public class Sandwich {
     private ArrayList<String> meatToppings;
     private ArrayList<String> cheeseToppings;
     private ArrayList<String> otherToppings;
-    private String sauce;
-    private boolean toasted;
+    private ArrayList<String> sauce;
+    private String toasted;
 
 
-    public Sandwich(String bread, int size, String sauce, boolean toasted) {
+    public Sandwich(String bread, int size, String toasted) {
         this.bread = bread;
         this.size = size;
         this.meatToppings = new ArrayList<>();
         this.cheeseToppings = new ArrayList<>();
         this.otherToppings = new ArrayList<>();
-        this.sauce = sauce;
+        this.sauce = new ArrayList<>();
         this.toasted = toasted;
     }
 
@@ -33,15 +33,15 @@ public class Sandwich {
         this.size = size;
     }
 
-    public boolean isToasted() {
+    public String isToasted() {
         return toasted;
     }
 
-    public boolean getToasted() {
+    public String getToasted() {
         return toasted;
     }
 
-    public void setToasted(boolean toasted) {
+    public void setToasted(String toasted) {
         this.toasted = toasted;
     }
 
@@ -53,32 +53,27 @@ public class Sandwich {
         this.bread = bread;
     }
 
-    public String getSauce() {
-        return sauce;
-    }
 
-    public void setSauce(String sauce) {
-        this.sauce = sauce;
-    }
 
-    // method for toasting bread
-    public void toast() {
-        toasted = true;
-    }
 
     // Create a StringBuilder object
     // using StringBuilder() constructor
-    /*public void printOrderDetails() {
+    public StringBuilder printOrderDetails() {
         StringBuilder str = new StringBuilder();
-        bread = "wheat";
-        size = 4;
-        str.append(bread);
-        str.append(size);
-        // print string
-        System.out.println(str);
-    }*/
+        str.append("Bread: " + bread).append("\n");
+        str.append("Size: " + size).append("\n");
+        str.append("Meat Toppings: " + meatToppings).append("\n");
+        str.append("Cheese Toppings: " + cheeseToppings).append("\n");
+        str.append(" Other Toppings: " + otherToppings).append("\n");
+        str.append("Sauces: " + sauce).append("\n");
+        str.append("Toasted: " + toasted);
+
+        return str;
+    }
 
 
     // method for price
+
+    
 
 }

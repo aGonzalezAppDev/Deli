@@ -120,9 +120,9 @@ import java.util.Scanner;
 
         System.out.print("Would you like the sandwich to be toasted? (yes/no)");
         System.out.println("-----------------------------------------");
-        boolean toasted = scanner.nextLine().equalsIgnoreCase("yes");
+        String toasted = scanner.nextLine();
 
-        Sandwich sandwich = new Sandwich(bread,sandwichSize, sauce, toasted);
+        Sandwich sandwich = new Sandwich(bread,sandwichSize, toasted);
         orders.addSandwich(sandwich);
 
         System.out.println("Order successfully added!");
