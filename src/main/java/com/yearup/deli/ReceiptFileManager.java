@@ -20,7 +20,8 @@ public class ReceiptFileManager {
 
         // write sandwich details
         for(Sandwich sandwich : order.getSandwiches()) {
-            writer.write(sandwich.getBread()+ sandwich.getSize() + "|" + "|" + sandwich.getToasted());
+            //writer.write(sandwich.getBread()+ sandwich.getSize() + "|" + "|" + sandwich.getToasted());
+            sandwich.printOrderDetails();
         }
 
     }
