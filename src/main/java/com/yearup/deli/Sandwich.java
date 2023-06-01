@@ -3,10 +3,6 @@ package com.yearup.deli;
 
 import java.awt.*;
 import java.util.ArrayList;
-
-<<<<<<< HEAD
-    public Sandwich(String bread, int size, String toppings, boolean toasted, String cheese, String extraCheese, String regularToppings, String sauce, boolean b) {
-=======
 public class Sandwich {
     private String bread;
     private int size;
@@ -19,7 +15,6 @@ public class Sandwich {
 
     public Sandwich(String bread, int size, String toasted) {
         this.bread = bread;
->>>>>>> f923948436e4f20bf40f49e9ab1097a15f0587e3
         this.size = size;
         this.meatToppings = new ArrayList<>();
         this.cheeseToppings = new ArrayList<>();

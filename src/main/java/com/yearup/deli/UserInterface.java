@@ -3,37 +3,37 @@ package com.yearup.deli;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-    public class UserInterface {
-        private ArrayList<Order> newOrders;
-        private Order orders;
-         private Scanner scanner;
-         public UserInterface() {
-             newOrders = new ArrayList<>();
-             scanner = new Scanner(System.in);
-         }
-        public void displayHomeScreen() {
-            System.out.println("Welcome to the Deli");
-            System.out.println("-----------------------------------------");
-            System.out.println("1. New Order");
-            System.out.println("0. Exit");
-            System.out.print("Enter you choice: ");
-            int choice = scanner.nextInt();
+public class UserInterface {
+    private ArrayList<Order> newOrders;
+    private Order orders;
+    private Scanner scanner;
+    public UserInterface() {
+        newOrders = new ArrayList<>();
+        scanner = new Scanner(System.in);
+    }
+    public void displayHomeScreen() {
+        System.out.println("Welcome to the Deli");
+        System.out.println("-----------------------------------------");
+        System.out.println("1. New Order");
+        System.out.println("0. Exit");
+        System.out.print("Enter you choice: ");
+        int choice = scanner.nextInt();
 
-            switch (choice) {
-                case 1:
-                    displayAddScreen();
-                    break;
+        switch (choice) {
+            case 1:
+                displayAddScreen();
+                break;
 
-                case 0:
-                    System.out.println("Exit out of the application");
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Invalid option. Try again.");
-                    displayHomeScreen();
-                    break;
-            }
+            case 0:
+                System.out.println("Exit out of the application");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Invalid option. Try again.");
+                displayHomeScreen();
+                break;
         }
+    }
 
 
     public void displayAddScreen() {
@@ -122,16 +122,6 @@ import java.util.Scanner;
         System.out.println("-----------------------------------------");
         String toasted = scanner.nextLine();
 
-<<<<<<< HEAD
-        System.out.println("Order successfully added!");
-        displayHomeScreen();
-
-        Sandwich sandwichOrder = new Sandwich(bread, sandwichSize, meats, extraMeats,
-                cheese, extraCheese, regularToppings, sauce, toasted);
-
-        Order order = new Order(sandwichOrder);
-        orders.add(order);
-=======
         Sandwich sandwich = new Sandwich(bread,sandwichSize, toasted);
         orders.addSandwich(sandwich);
 
@@ -148,7 +138,6 @@ import java.util.Scanner;
         str.append("Toasted: ").append(toasted).append("\n");
         // print string
         System.out.println(str.toString());
->>>>>>> f923948436e4f20bf40f49e9ab1097a15f0587e3
     }
     public void displayAddDrink() {
         scanner.nextLine();
@@ -171,9 +160,10 @@ import java.util.Scanner;
         scanner.nextLine();
         System.out.print("Would you like chips");
         System.out.println("-----------------------------------------");
-        boolean chips = scanner.nextBoolean();
+        String chips = scanner.nextLine();
 
         Order chipsOrder = new Order(chips);
+        orders.addChips(chipsOrder);
 
         System.out.println("Chips successfully added!");
         displayHomeScreen();
@@ -199,4 +189,4 @@ import java.util.Scanner;
     public void printOrderDetails() {
 
     }
-    }
+}
