@@ -3,7 +3,6 @@ package com.yearup.deli;
 
 import java.awt.*;
 import java.util.ArrayList;
-
 public class Sandwich {
     private String bread;
     private int size;

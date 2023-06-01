@@ -1,21 +1,21 @@
 package com.yearup.deli;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Order {
     private int numOfOrder;
     private ArrayList<Sandwich> sandwiches;
     private ArrayList<Drink> drinks;
-    private boolean chips;
+    private ArrayList<String> chips;
 
     public Order(int numOfOrder) {
         this.numOfOrder = numOfOrder;
         this.sandwiches = new ArrayList<>();
         this.drinks = new ArrayList<>();
+        this.chips = new ArrayList<>();
     }
 
-    public Order(boolean chips) {
+    public Order(String chips) {
     }
 
     public int getNumOfOrder() {
@@ -30,11 +30,11 @@ public class Order {
         return drinks;
     }
 
-    public void addChips() {
-        chips = false;
+    public ArrayList<String> getChips() {
+        return chips;
     }
 
-    /*public double getTotalPrice() {
+    /* public double getTotalPrice() {
         double totalPrice = 0;
 
         for (Sandwich sandwich : sandwiches) {
@@ -50,7 +50,7 @@ public class Order {
 
     }*/
     
-    /*public void displayOrder() {
+    /* public void displayOrder() {
         System.out.println("Order Details:");
         for (Sandwich sandwich : sandwiches) {
             System.out.println("Sandwich size: " + sandwich.getSize());
@@ -59,7 +59,8 @@ public class Order {
         }
         System.out.println("Total cost: $" + getTotalPrice());
     }*/
-    public void isOrderCorrect(Scanner scanner) {
+
+    /* public void isOrderCorrect(Scanner scanner) {
         System.out.print("Is your order correct? ");
         boolean correct = scanner.nextBoolean();
 
@@ -69,16 +70,18 @@ public class Order {
             System.out.println("Incorrect order.");
         }
 
-    }
+    } */
+
     public void addSandwich(Sandwich sandwich) {
         sandwiches.add(sandwich);
-
     }
     public void addDrink(Drink drink) {
         drinks.add(drink);
-
     }
 
+    public void addChips(Order chip) {
+        chips.add(String.valueOf(chip));
+    }
     public ArrayList<Sandwich> displaySandwiches(){
         return sandwiches;
     }

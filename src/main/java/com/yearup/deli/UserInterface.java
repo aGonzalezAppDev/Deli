@@ -3,37 +3,37 @@ package com.yearup.deli;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-    public class UserInterface {
-        private ArrayList<Order> newOrders;
-        private Order orders;
-         private Scanner scanner;
-         public UserInterface() {
-             newOrders = new ArrayList<>();
-             scanner = new Scanner(System.in);
-         }
-        public void displayHomeScreen() {
-            System.out.println("Welcome to the Deli");
-            System.out.println("-----------------------------------------");
-            System.out.println("1. New Order");
-            System.out.println("0. Exit");
-            System.out.print("Enter you choice: ");
-            int choice = scanner.nextInt();
+public class UserInterface {
+    private ArrayList<Order> newOrders;
+    private Order orders;
+    private Scanner scanner;
+    public UserInterface() {
+        newOrders = new ArrayList<>();
+        scanner = new Scanner(System.in);
+    }
+    public void displayHomeScreen() {
+        System.out.println("Welcome to the Deli");
+        System.out.println("-----------------------------------------");
+        System.out.println("1. New Order");
+        System.out.println("0. Exit");
+        System.out.print("Enter you choice: ");
+        int choice = scanner.nextInt();
 
-            switch (choice) {
-                case 1:
-                    displayAddScreen();
-                    break;
+        switch (choice) {
+            case 1:
+                displayAddScreen();
+                break;
 
-                case 0:
-                    System.out.println("Exit out of the application");
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Invalid option. Try again.");
-                    displayHomeScreen();
-                    break;
-            }
+            case 0:
+                System.out.println("Exit out of the application");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Invalid option. Try again.");
+                displayHomeScreen();
+                break;
         }
+    }
 
 
     public void displayAddScreen() {
@@ -160,9 +160,10 @@ import java.util.Scanner;
         scanner.nextLine();
         System.out.print("Would you like chips");
         System.out.println("-----------------------------------------");
-        boolean chips = scanner.nextBoolean();
+        String chips = scanner.nextLine();
 
         Order chipsOrder = new Order(chips);
+        orders.addChips(chipsOrder);
 
         System.out.println("Chips successfully added!");
         displayHomeScreen();
@@ -188,4 +189,4 @@ import java.util.Scanner;
     public void printOrderDetails() {
 
     }
-    }
+}
