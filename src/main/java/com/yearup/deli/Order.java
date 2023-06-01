@@ -34,23 +34,23 @@ public class Order {
         chips = false;
     }
 
-    public double getTotalPrice() {
+    /*public double getTotalPrice() {
         double totalPrice = 0;
 
         for (Sandwich sandwich : sandwiches) {
             totalPrice += sandwich.getTotalPriceOfSandwich();
         }
         for (Drink drink : drinks) {
-            totalPrice += drink.getPrice();
+        //    totalPrice += drink.getPrice();
         }
         if (chips == true) {
             totalPrice += 1.50;
         }
         return totalPrice;
 
-    }
+    }*/
     
-    public void displayOrder() {
+    /*public void displayOrder() {
         System.out.println("Order Details:");
         for (Sandwich sandwich : sandwiches) {
             System.out.println("Sandwich size: " + sandwich.getSize());
@@ -58,7 +58,7 @@ public class Order {
             System.out.println("Toasted: " + sandwich.getToasted());
         }
         System.out.println("Total cost: $" + getTotalPrice());
-    }
+    }*/
     public void isOrderCorrect(Scanner scanner) {
         System.out.print("Is your order correct? ");
         boolean correct = scanner.nextBoolean();
@@ -68,5 +68,28 @@ public class Order {
         } else {
             System.out.println("Incorrect order.");
         }
+
+    }
+    public void addSandwich(Sandwich sandwich) {
+        sandwiches.add(sandwich);
+
+    }
+    public void addDrink(Drink drink) {
+        drinks.add(drink);
+
+    }
+
+    public ArrayList<Sandwich> displaySandwiches(){
+        return sandwiches;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "numOfOrder=" + numOfOrder +
+                ", sandwiches=" + sandwiches +
+                ", drinks=" + drinks +
+                ", chips=" + chips +
+                '}';
     }
 }
