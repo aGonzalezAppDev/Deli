@@ -1,21 +1,21 @@
 package com.yearup.deli;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Order {
     private int numOfOrder;
     private ArrayList<Sandwich> sandwiches;
     private ArrayList<Drink> drinks;
-    private ArrayList<String> chips;
+    private List<Chips> chipsList;
+    private double price;
 
     public Order(int numOfOrder) {
         this.numOfOrder = numOfOrder;
         this.sandwiches = new ArrayList<>();
         this.drinks = new ArrayList<>();
-        this.chips = new ArrayList<>();
-    }
-
-    public Order(String chips) {
+        this.chipsList = new ArrayList<>();
+        this.price = 0.0;
     }
 
     public int getNumOfOrder() {
@@ -30,9 +30,9 @@ public class Order {
         return drinks;
     }
 
-    public ArrayList<String> getChips() {
+    /* public ArrayList<String> getChips() {
         return chips;
-    }
+    } */
 
     /* public double getTotalPrice() {
         double totalPrice = 0;
@@ -49,7 +49,10 @@ public class Order {
         return totalPrice;
 
     }*/
-    
+    // own price for the order total price
+    // display total order
+    // in the main class
+    //if is correct checkout
     /* public void displayOrder() {
         System.out.println("Order Details:");
         for (Sandwich sandwich : sandwiches) {
@@ -78,12 +81,25 @@ public class Order {
     public void addDrink(Drink drink) {
         drinks.add(drink);
     }
-
-    public void addChips(Order chip) {
+// chips different class, Item class is abstract drinks, chips extends item Person class
+    /* public void addChips(Order chip) {
         chips.add(String.valueOf(chip));
-    }
+    } */
     public ArrayList<Sandwich> displaySandwiches(){
         return sandwiches;
+    }
+
+    public void addChips(Chips chips) {
+        this.chipsList.add(chips);
+        this.price += 1.50;
+    }
+
+    public List<Chips> getChipsList() {
+        return chipsList;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     @Override
@@ -92,7 +108,8 @@ public class Order {
                 "numOfOrder=" + numOfOrder +
                 ", sandwiches=" + sandwiches +
                 ", drinks=" + drinks +
-                ", chips=" + chips +
+                ", chipsList=" + chipsList +
+                ", price=" + price +
                 '}';
     }
 }

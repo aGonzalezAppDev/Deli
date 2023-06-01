@@ -168,7 +168,7 @@ public class UserInterface {
         System.out.println("Chips successfully added!");
         displayHomeScreen();
     }
-    /*public void checkOut() {
+    /* public void checkOut() {
              //Add a switch
         Order totalOrder = new Order(orders.getNumOfOrder());
         double total = totalOrder.getTotalPrice();
@@ -185,8 +185,7 @@ public class UserInterface {
             case 1:
                 saveOrder();
         }
-        }*/
+        } */
     public void printOrderDetails() {
-
     }
 }
