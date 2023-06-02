@@ -1,0 +1,13 @@
+Bread: white
+Size: 8
+Meat Toppings: ham, 
+Cheese Toppings: swiss, 
+ Other Toppings: onions, 
+Sauces: mayo, 
+Toasted: no
+$ 12.1Size: small
+Flavor: cola
+Price: $0.0
+$ 1.0Chips: doritos
+
+$ 1.5
