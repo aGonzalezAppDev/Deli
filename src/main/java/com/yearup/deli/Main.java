@@ -43,7 +43,7 @@ public class Main {
         System.out.println("2. Add Drink");
         System.out.println("3. Add Chips");
         System.out.println("4. Checkout");
-        System.out.print("Enter you choice: ");
+        System.out.println("Enter you choice: ");
         int choice = scanner.nextInt();
 
         switch (choice) {
@@ -78,28 +78,28 @@ public class Main {
         scanner.nextLine();
         System.out.println("Bread options: White, Wheat, Rye, Wrap.");
         System.out.println("-----------------------------------------");
-        System.out.print("Please enter the name of bread:");
+        System.out.println("Please enter the name of bread:");
 
         String bread = scanner.nextLine();
 
         System.out.println("Sandwich sizes(Goes by inch): 4, 8, 12.");
         System.out.println("-----------------------------------------");
-        System.out.print("Please enter sandwich size:");
+        System.out.println("Please enter sandwich size:");
         int sandwichSize = scanner.nextInt();
         scanner.nextLine();
 
         System.out.println("Meat Options: Steak, Ham, Salami, Roast Beef, Chicken, Bacon.");
         System.out.println("-----------------------------------------");
-        System.out.print("Please enter a type of meat:");
+        System.out.println("Please enter a type of meat:");
         String meats = scanner.nextLine();
         meatToppings.add(meats);
 
-        System.out.print("Would you like extra meat? (yes/no)");
+        System.out.println("Would you like extra meat? (yes/no)");
         System.out.println("-----------------------------------------");
         boolean extraMeats = scanner.nextLine().equalsIgnoreCase("yes");
         boolean exit = false;
         while (!exit) {
-            System.out.println("Enter a another meat topping or exit to stop");
+            System.out.println("Enter a another meat topping or type (exit) to continue: ");
             meats = scanner.nextLine();
             if (meats.equalsIgnoreCase("exit")) {
                 exit = true;
@@ -110,20 +110,19 @@ public class Main {
         }
         System.out.println("Cheese Options: American, Provolone, Cheddar, Swiss");
         System.out.println("-----------------------------------------");
-        System.out.print("Please enter a type of cheese:");
-
+        System.out.println("Please enter a type of cheese:");
         String cheese = scanner.nextLine();
         cheeseToppings.add(cheese);
-        scanner.nextLine();
 
-        System.out.print("Would you like extra cheese? (yes/no)");
+
+        System.out.println("Would you like extra cheese? (yes/no)");
         System.out.println("-----------------------------------------");
         boolean extraCheese = scanner.nextLine().equalsIgnoreCase("yes");
 
 
         exit = false;
         while (!exit) {
-            System.out.println("Enter a another cheese topping or exit to stop");
+            System.out.println("Enter a another cheese topping or type (exit) to continue: ");
             cheese = scanner.nextLine();
             if (cheese.equalsIgnoreCase("exit")) {
                 exit = true;
@@ -133,17 +132,16 @@ public class Main {
             }
         }
 
-        System.out.println("Regular Topping Options: Lettuce, Peppers, Onions, Tomatoes, Jalepenos, Cucumbers, Pickles, Guacamole, Mushrooms");
+        System.out.println("Regular Topping Options: Lettuce, Peppers, Onions, Tomatoes, Jalapenos, Cucumbers, Pickles, Guacamole, Mushrooms");
         System.out.println("-----------------------------------------");
-        System.out.print("Please enter toppings: ");
-
+        System.out.println("Please enter toppings: ");
         String regularToppings = scanner.nextLine();
         otherToppings.add(regularToppings);
-        scanner.nextLine();
+
 
         exit = false;
         while (!exit) {
-            System.out.println("Enter a another Regular topping or exit to stop");
+            System.out.println("Enter a another Regular topping or type (exit) to continue: ");
             regularToppings = scanner.nextLine();
             if (regularToppings.equalsIgnoreCase("exit")) {
                 exit = true;
@@ -155,15 +153,14 @@ public class Main {
 
         System.out.println("Sauce Options: Mayo, Mustard, Ketchup, Ranch, Thousand Islands, Vinaigrette");
         System.out.println("-----------------------------------------");
-        System.out.print("Please enter a sauce:");
-
+        System.out.println("Please enter a sauce:");
         String sauce = scanner.nextLine();
         sauces.add(sauce);
-        scanner.nextLine();
+
 
         exit = false;
         while (!exit) {
-            System.out.println("Enter a another sauce or exit to stop");
+            System.out.println("Enter a another sauce or type (exit) to continue: ");
             sauce = scanner.nextLine();
             if (sauce.equalsIgnoreCase("exit")) {
                 exit = true;
@@ -173,7 +170,7 @@ public class Main {
             }
         }
 
-        System.out.print("Would you like the sandwich to be toasted? (yes/no)");
+        System.out.println("Would you like the sandwich to be toasted? (yes/no)");
         System.out.println("-----------------------------------------");
         String toasted = scanner.nextLine();
 
@@ -181,6 +178,7 @@ public class Main {
         order.addSandwich(sandwich);
 
         System.out.println("Order successfully added!");
+        System.out.println("-----------------------------------------");
 
         StringBuilder str = new StringBuilder();
         str.append("Bread: ").append(bread).append("\n");
@@ -196,11 +194,11 @@ public class Main {
 
     public static void displayAddDrink(Scanner scanner) {
         scanner.nextLine();
-        System.out.print("Please select drink size: Small, Medium, Large");
+        System.out.println("Please select drink size: Small, Medium, Large");
         System.out.println("-----------------------------------------");
 
         String drinkSize = scanner.nextLine();
-        System.out.print("Please select drink flavor: Cola, Sprite, Pepsi");
+        System.out.println("Please select drink flavor: Cola, Sprite, Pepsi");
         System.out.println("-----------------------------------------");
         String drinkFlavor = scanner.next();
 
@@ -212,7 +210,7 @@ public class Main {
 
     public static void displayAddChips(Scanner scanner) {
         scanner.nextLine();
-        System.out.print("Would you like chips");
+        System.out.println("Would you like chips");
         System.out.println("-----------------------------------------");
         String chips = scanner.nextLine();
 
@@ -224,16 +222,6 @@ public class Main {
 
     public static void checkOut(Scanner scanner) {
         ReceiptFileManager rfm = new ReceiptFileManager();
-        //Add a switch
-        //use the order that we already have Order totalOrder = new Order(orders.getNumOfOrder());
-/*
-        String orderDetails = order.printOrderDetails();
-        System.out.println("Order Details: ");
-        System.out.println(orderDetails);
-
-        double total = order.getTotalPrice();
-        System.out.println("Total: $" + total);
-*/
 
         for (Sandwich sandwich : order.getSandwiches()) {
             System.out.println(sandwich);
@@ -251,6 +239,7 @@ public class Main {
         System.out.println("0. Cancel order");
         System.out.print("Enter you choice: ");
         int choice = scanner.nextInt();
+        scanner.nextLine();
 
         switch (choice) {
             case 1:
