@@ -1,0 +1,13 @@
+Bread: white
+Size: 4
+Meat Toppings: ham, 
+Cheese Toppings: crayon, 
+ Other Toppings: lettuce, 
+Sauces: mayo, 
+Toasted: no
+$ 8.05
+
+Size: small
+Flavor: cola
+$ 1.0
+-----------------------------------------The total price is: $ 9.05

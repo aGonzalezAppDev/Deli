@@ -1,0 +1,14 @@
+Bread: white
+Size: 8
+Meat Toppings: ham, 
+Cheese Toppings: swiss, 
+ Other Toppings: onions, 
+Sauces: ketchup, 
+Toasted: no
+$ 12.1
+
+Size: small
+Flavor: cola
+$ 1.0
+-----------------------------------------
+The total price is: $ 13.1

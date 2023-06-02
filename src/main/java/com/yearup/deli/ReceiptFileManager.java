@@ -41,6 +41,10 @@ public class ReceiptFileManager {
                 writer.write(chips.printChipsOrder());
                 writer.write("$ " + chips.getPrice());
             }
+            writer.write("-----------------------------------------");
+            writer.write('\n');
+            double totalPrice = order.getTotalPrice();
+            writer.write("The total price is: $ " + totalPrice);
             writer.close();
         } catch(Exception e)
         {
