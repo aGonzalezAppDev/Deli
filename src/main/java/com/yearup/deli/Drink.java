@@ -39,7 +39,6 @@ public class Drink {
         StringBuilder str = new StringBuilder();
         str.append("Size: ").append(size).append("\n");
         str.append("Flavor: ").append(flavor).append("\n");
-        str.append("Price: $").append(price);
         return str.toString();
     }
 

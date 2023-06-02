@@ -1,0 +1,8 @@
+Bread: white
+Size: 4
+Meat Toppings: ham, 
+Cheese Toppings: swiss, 
+ Other Toppings: lettuce, 
+Sauces: mayo, 
+Toasted: yes
+$ 8.05

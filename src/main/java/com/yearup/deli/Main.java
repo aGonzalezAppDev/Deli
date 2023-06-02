@@ -210,7 +210,7 @@ public class Main {
 
     public static void displayAddChips(Scanner scanner) {
         scanner.nextLine();
-        System.out.println("Would you like chips");
+        System.out.println("Would you like chips: Doritos, Cheetos, Lays");
         System.out.println("-----------------------------------------");
         String chips = scanner.nextLine();
 
@@ -234,6 +234,9 @@ public class Main {
         for (Chips chips : order.getChipsList()) {
             System.out.println(chips);
         }
+        double totalPrice = order.getTotalPrice();
+        System.out.println("The total price is: $ " + totalPrice);
+        System.out.println("-----------------------------------------");
 
         System.out.println("1. Confirm your order");
         System.out.println("0. Cancel order");
@@ -243,7 +246,7 @@ public class Main {
 
         switch (choice) {
             case 1:
-                System.out.println("Saving File");
+                System.out.println("Saved Order");
                 try {
                     rfm.saveOrder(order);
                 } catch (IOException e) {

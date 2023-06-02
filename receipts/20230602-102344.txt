@@ -1,0 +1,15 @@
+Bread: white
+Size: 4
+Meat Toppings: ham, 
+Cheese Toppings: swiss, 
+ Other Toppings: onions, 
+Sauces: ranch, 
+Toasted: no
+$ 8.05
+Size: small
+Flavor: cola
+
+$ 1.0
+Chips: cheetos
+
+$ 1.5

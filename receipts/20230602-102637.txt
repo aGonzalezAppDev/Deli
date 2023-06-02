@@ -1,0 +1,14 @@
+Bread: white
+Size: 8
+Meat Toppings: salami, 
+Cheese Toppings: swiss, 
+ Other Toppings: lettuce, 
+Sauces: ranch, 
+Toasted: no
+$ 12.1
+Size: medium
+Flavor: cola
+$ 2.0
+
+Chips: cheetos
+$ 1.5
